@@ -1,7 +1,7 @@
 local CircularBuffer = require('circular-buffer')
 
 describe('circular-buffer', function()
-
+w
   it('reading an empty buffer throws a BufferEmptyException', function()
     local buffer = CircularBuffer:new(1)
     assert.has_error((function() buffer:read() end), 'buffer is empty')
@@ -55,7 +55,7 @@ describe('circular-buffer', function()
 
   it('writes of nil do not occupy buffer', function()
     local buffer = CircularBuffer:new(3)
-    buffer.write(nil)
+    buffer:write(nil)
     for i = 1, 3 do
       buffer:write(tostring(i))
     end
